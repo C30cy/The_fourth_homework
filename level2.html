@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            border: solid 1px black;
+        }
+
+        /* #text{
+            
+        } */
+    </style>
+    <!-- <script>
+        window.onload = function(){
+            let textarea = document.getElementById("textarea");
+            let post = document.getElementsByTagName("button")[0];
+            post.onclick = function(){
+                let text = document.getElementById("text");
+                text.innerHTML = textarea.value;
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+    <textarea name="评论区" id="textarea" cols="80" rows="10">1234</textarea>
+    <button class="post">点击发布</button>
+    <div class="list">
+        <div>留言板:</div>
+    </div>
+
+    <script>
+        //你的代码
+        let textarea = document.getElementById("textarea");
+        let post = document.getElementsByTagName("button")[0];
+        post.onclick = function () {
+            let div = document.createElement("div");
+            let date = new Date();
+            // alert(date.getDate());
+            div.innerHTML = textarea.value+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+date.getFullYear()+"月"+date.getDay()+"日"+date.getDate();
+            let list = document.getElementsByTagName("div")[0];
+            list.appendChild(div);
+        }
+    </script>
+</body>
+
+</html>
